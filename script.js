@@ -22,7 +22,7 @@ accordion.addEventListener("click", function (e) {
       if (e.target.classList.contains("fuji")) {
         descriptionHeader.innerHTML = "Discover picturesque scenery";
       } else if (e.target.classList.contains("garden")) {
-        descriptionHeader.innerHTML = "Take your time in peaceful gardens";
+        descriptionHeader.innerHTML = "Relax in peaceful gardens";
       } else if (e.target.classList.contains("street")) {
         descriptionHeader.innerHTML = "Walk urban streets";
       } else if (e.target.classList.contains("tori")) {
@@ -36,18 +36,10 @@ upButton.addEventListener("click", function () {
   let turn = rotation.style.transform;
   let clockwise = turn + "rotate(90deg)";
   rotation.style.transform = clockwise;
-
-  let centerTurn = center.style.transform;
-  let counterclockwise = centerTurn + "rotate(-90deg)";
-  center.style.transform = counterclockwise;
 });
 
 downButton.addEventListener("click", function () {
   let turn = rotation.style.transform;
   let clockwise = turn + "rotate(-90deg)";
   rotation.style.transform = clockwise;
-
-  let centerTurn = center.style.transform;
-  let counterclockwise = centerTurn + "rotate(90deg)";
-  center.style.transform = counterclockwise;
 });

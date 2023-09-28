@@ -17,49 +17,34 @@ body {
 .container {
     width: 100vw;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .accordion {
-    height: 70%;
+    height: 70vh;
     display: flex;
     flex-direction: column;
-    gap: 3%;
+    gap: 1vh;
 }
 
 .picture {
-    height: 10%;
+    height: 9vh;
+    width: 100%;
     border-radius: 20px;
     filter: grayscale(1);
-    transition: height 1s, filter 1.5s;
-}
-
-.fuji {
-    background-image: url(/images/fuji-sm.jpg);
-    background-size: cover;
-    background-position: center;
-}
-.garden {
-    background-image: url(/images/garden-sm.jpg);
-    background-size: cover;
-    background-position: center;
-}
-.street {
-    background-image: url(/images/street-sm.jpg);
-    background-size: cover;
-    background-position: center;
-}
-.tori {
-    background-image: url(/images/tori-sm.jpg);
-    background-size: cover;
-    background-position: center;
+    transition: height 1s, filter 1s;
+    object-fit: cover;
 }
 
 .show {
-    height: 70%;
-    filter: grayscale(0);
+    height: 40vh;
+    filter: grayscale(0.5);
 }
 
 .description {
+    height: 30vh;
     text-align: center;
     color:antiquewhite;
 }
@@ -138,9 +123,9 @@ body {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 320px;
+    height: 100vw;
     background-color: black;
-    clip-path: polygon(0 0, 100% 0, 100% 320px, 50% 160px, 0 320px);
+    clip-path: polygon(0 0, 100vw 0, 100vw 100vw, 50vw 50vw, 0 100vw);
     z-index: 1;
 }
 
@@ -148,15 +133,15 @@ body {
     height: 100px;
     width: 100px;
     position: absolute;
-    top: 100px;
-    left: 160px;
-    transform: translateX(-50px);
+    top: 50vw;
+    left: 50vw;
+    transform: translate(-50px, -50px);
     z-index: 2;
 }
 
 .side:nth-of-type(2) {
-height: 30%;
+    height: 30%;
+    color: aliceblue;
     display: flex;
-    flex-direction: column;
     justify-content: center;
 }
