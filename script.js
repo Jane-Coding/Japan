@@ -15,7 +15,6 @@ accordion.addEventListener("click", function (e) {
     for (let pic of pictures) {
       pic.classList.contains("show") ? pic.classList.remove("show") : false;
     }
-    console.log(e.target);
     if (!e.target.classList.contains("show")) {
       e.target.classList.add("show");
       descriptionHeader.classList.toggle("fadeIn");
@@ -32,14 +31,16 @@ accordion.addEventListener("click", function (e) {
   }
 });
 
+let degrees = 0;
+
 upButton.addEventListener("click", function () {
-  let turn = rotation.style.transform;
-  let clockwise = turn + "rotate(90deg)";
+  degrees += 90;
+  let clockwise = `rotate(${degrees}deg)`;
   rotation.style.transform = clockwise;
 });
 
 downButton.addEventListener("click", function () {
-  let turn = rotation.style.transform;
-  let clockwise = turn + "rotate(-90deg)";
-  rotation.style.transform = clockwise;
+  degrees -= 90;
+  let counterclockwise = `rotate(${degrees}deg)`;
+  rotation.style.transform = counterclockwise;
 });

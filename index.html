@@ -5,10 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Japan representation</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <script defer src="script.js"></script>
   </head>
   <body>
     <section class="banner"></section>
+    <section class="introduction">
+      <p>
+        The name for Japan in Japanese is written using the kanji 日本 and is
+        pronounced Nippon or Nihon.The characters 日本 mean "sun origin", which
+        is the source of the popular Western epithet "Land of the Rising Sun".
+      </p>
+    </section>
     <section class="container">
       <div class="accordion" id="accordion">
         <img src="/images/fuji-sm.jpg" alt="" class="picture fuji show" />
@@ -36,9 +47,17 @@
         </div>
       </div>
       <div class="side">
-        <button class="up" id="up-button">Button UP</button>
-        <div class="description">here is some text</div>
-        <button class="down" id="down-button">Button Down</button>
+        <button class="up" id="up-button">
+          <span class="material-symbols-outlined"> expand_less </span>
+        </button>
+        <div class="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+          architecto temporibus quas nesciunt, placeat voluptas esse vitae in
+          modi doloribus.
+        </div>
+        <button class="down" id="down-button">
+          <span class="material-symbols-outlined"> expand_more </span>
+        </button>
       </div>
     </section>
   </body>
