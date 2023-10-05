@@ -1,27 +1,44 @@
 body {
     margin: 0;
     background-color: rgb(0, 0, 0);
-    color: blanchedalmond;
+    color: blanchedalmond;    
+}
+
+main {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y proximity;
+    scroll-behavior: smooth;
 }
 
 .banner {
-    height: 100vh;
-    background-image: url("/images/shinjuku.jpg");
+    margin: auto;
+    /* font-family: 'Zen Antique', serif; */
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 65vw;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    background: url(/images/shinjuku-sm.webp);
     background-size: cover;
+    background-clip: text;
     background-position: center;
-    -webkit-mask-image: url("/images/nihon-mob.png");
-    -webkit-mask-size:contain;
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.banner-bg {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
 }
 
 .introduction {
-    margin: 1em 1.5em;
+    margin: 2.5em 1.3em;
     text-align: center;
 }
 
 .container {
-    width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -33,6 +50,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1vh;
+    scroll-snap-align: start;
 }
 
 .picture {
@@ -52,7 +70,7 @@ body {
 .description {
     height: 30vh;
     text-align: center;
-    color:antiquewhite;
+    color:rgb(225, 215, 250);
 }
 
 .fadeIn {
@@ -65,17 +83,14 @@ body {
 }
 
 .information {
-    height: 100vh;
-}
-
-.side:nth-of-type(1) {
     position: relative;
-    height: 70%;
+    height: 100vw;
+    width: 100vw;
 }
 
 .wheel {
-    height: 100vw;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     border-radius: 50%;
     background: radial-gradient(rgb(198, 42, 49) 30%, rgb(90, 0, 0));
     display: grid;
@@ -83,13 +98,34 @@ body {
     grid-template-rows: auto auto auto;
     transform: rotate(0deg);
     transition: transform .5s;
+    position: relative;
+    z-index: -1;
 }
+
+/* @media (min-width: 400px){
+    .inner-box {
+        height: 80vw;
+        width: 80vw;
+        left: 10vw;
+    }
+    .wheel {
+        width: 99%;
+        height: 99%;
+    }
+    
+} */
 
 .option {
     color: aliceblue;
     display: inline-block;
     margin: auto auto;
     height: fit-content;
+    text-align: center;
+}
+
+.option p {
+    margin: 0;
+    display: block;
 }
 
 .option:nth-of-type(1) {
@@ -121,49 +157,101 @@ body {
     text-align: center;
 }
 
-.cover {
+    .cover {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vw;
+    width: 100%;
+    height: 100%;
     background-color: black;
-    clip-path: polygon(0 0, 100vw 0, 100vw 100vw, 50vw 40vw, 0 100vw);
-    z-index: 1;
+    /* clip-path: polygon(0 0, 100vw 0, 100vw 100vw, 50vw 40vw, 0 100vw); */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 40%, 0 100%);
 }
 
 .cat {    
     height: 100px;
     width: 100px;
     position: absolute;
-    top: 50vw;
-    left: 50vw;
+    top: 50%;
+    left: 50%;
     transform: translate(-50px, -50px);
     z-index: 2;
 }
 
-.side:nth-of-type(2) {
-    height: 30%;
-    color: aliceblue;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.definition {
+    margin: 1rem;
+    display: grid;
+    scroll-snap-align: end;
+}
+
+.definition p {
+    grid-row: span 3;
+    grid-column: span 2;
 }
 
 .up,
 .down {
-    width: 30%;
+    height: 50px;
+    width: 100px;
     background-color: rgb(198, 42, 49);
     border-style: ridge;
     border-radius: 10px;
+    grid-column: 3;
 }
 
-.up span {
-    font-size: 2em;
+.up img,
+.down img {
+    height: 3em;
+    width: 3em;
 }
+
+.up {
+    grid-row: 1;
+}
+
+.down {
+    grid-row: 3;
+}
+
+/* @media (min-height: 600px){
+    .up {
+        grid-row: 1;
+        grid-column: 2;
+    }
+    .definition p {
+        grid-row: 2;
+        grid-column: span 3;
+    }
+    
+    .down {
+        grid-row: 3;
+        grid-column: 2;
+    }
+    .information {
+        height: 90vh;
+    }
+} */
+
+/* @media (min-height: 800px){
+    .information {
+        height: 75vh;
+    }
+} */
 
 .down:active,
 .up:active {
     background-color: darkred;
+}
+
+.information-header {
+    margin: 0 .2rem;
+    color: red;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.information-fineprint {
+    color: red;
+    text-align: center;
+    margin: 0;
 }

@@ -5,60 +5,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Japan representation</title>
     <link rel="stylesheet" href="styles.css" />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap" rel="stylesheet"> -->
     <link
+      href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap"
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
     <script defer src="script.js"></script>
   </head>
   <body>
-    <section class="banner"></section>
-    <section class="introduction">
-      <p>
+    <main>
+      <div class="banner">日本</div>
+      <p class="introduction">
         The name for Japan in Japanese is written using the kanji 日本 and is
         pronounced Nippon or Nihon.The characters 日本 mean "sun origin", which
         is the source of the popular Western epithet "Land of the Rising Sun".
       </p>
-    </section>
-    <section class="container">
-      <div class="accordion" id="accordion">
-        <img src="/images/fuji-sm.jpg" alt="" class="picture fuji show" />
-        <img src="/images/garden-sm.jpg" alt="" class="picture garden" />
-        <img src="/images/street-sm.jpg" alt="" class="picture street" />
-        <img src="/images/tori-sm.jpg" alt="" class="picture tori" />
-      </div>
-      <div class="description">
-        <h2 id="description-header">Discover picturesque scenery</h2>
-        <p id="description-text">
-          Japan's natural beauty can be enjoyed all year round.
-        </p>
-      </div>
-    </section>
-    <section class="information">
-      <div class="side">
-        <div class="cover"></div>
-        <img class="cat" src="/images/neko.png" alt="" />
-        <div class="wheel" id="rotation">
-          <span class="option">Sushi</span>
-          <span class="option">Sakura</span>
-          <span class="option" id="center"> </span>
-          <span class="option">Anime</span>
-          <span class="option">Gaming</span>
+      <section class="container">
+        <div class="accordion" id="accordion">
+          <img
+            fetchpriority="high"
+            srcset="
+              /images/fuji/fuji-400.webp   400w,
+              /images/fuji/fuji-800.webp   800w,
+              /images/fuji/fuji-1000.webp 1000w,
+              /images/fuji/fuji-1440.webp 1440w,
+              /images/fuji/fuji-1770.webp 1770w,
+              /images/fuji/fuji-2048.webp 2048w
+            "
+            sizes="100vw"
+            src="/images/fuji/fuji-1770.webp"
+            alt="Photo of mount Fujiyama"
+            class="picture fuji show"
+          />
+          <img
+            fetchpriority="high"
+            srcset="
+              /images/garden/garden-400.webp   400w,
+              /images/garden/garden-800.webp   800w,
+              /images/garden/garden-1000.webp 1000w,
+              /images/garden/garden-1440.webp 1440w,
+              /images/garden/garden-1770.webp 1770w,
+              /images/garden/garden-2048.webp 2048w
+            "
+            sizes="100vw"
+            src="/images/garden/garden-1770.webp"
+            alt="Photo of a japanese garden"
+            class="picture garden"
+          />
+          <img
+            fetchpriority="high"
+            srcset="
+              /images/street/street-400.webp   400w,
+              /images/street/street-800.webp   800w,
+              /images/street/street-1000.webp 1000w,
+              /images/street/street-1440.webp 1440w,
+              /images/street/street-1770.webp 1770w,
+              /images/street/street-2048.webp 2048w
+            "
+            sizes="100vw"
+            src="/images/street/street-1770.webp"
+            alt="Photo of busy street in Japan"
+            class="picture street"
+          />
+          <img
+            fetchpriority="high"
+            srcset="
+              /images/tori/tori-400.webp   400w,
+              /images/tori/tori-800.webp   800w,
+              /images/tori/tori-1000.webp 1000w,
+              /images/tori/tori-1440.webp 1440w,
+              /images/tori/tori-1770.webp 1770w,
+              /images/tori/tori-2048.webp 2048w
+            "
+            sizes="100vw"
+            src="/images/tori/tori-1770.webp"
+            alt="Photo of japanese red gates"
+            class="picture tori"
+          />
         </div>
-      </div>
-      <div class="side">
-        <button class="up" id="up-button">
-          <span class="material-symbols-outlined"> expand_less </span>
-        </button>
         <div class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-          architecto temporibus quas nesciunt, placeat voluptas esse vitae in
-          modi doloribus.
+          <h2 id="description-header">Discover picturesque scenery</h2>
+          <p id="description-text">
+            Japan's natural beauty can be enjoyed all year round.
+          </p>
         </div>
-        <button class="down" id="down-button">
-          <span class="material-symbols-outlined"> expand_more </span>
-        </button>
-      </div>
-    </section>
+      </section>
+      <section class="information">
+        <div class="cover">
+          <h2 class="information-header">
+            Most famous japanese words that everybody knows
+          </h2>
+          <p class="information-fineprint">*or at least heard about them</p>
+        </div>
+        <img class="cat" src="/images/neko.png" alt="picture of Maneki neko" />
+        <div class="wheel" id="rotation">
+          <span class="option"
+            ><p>寿司</p>
+            <p>Sushi</p></span
+          >
+          <span class="option"
+            ><p>桜</p>
+            <p>Sakura</p></span
+          >
+          <span class="option" id="center"> </span>
+          <span class="option"
+            ><p>アニメ</p>
+            <p>Anime</p></span
+          >
+          <span class="option"
+            ><p>絵文字</p>
+            <p>Emoji</p></span
+          >
+        </div>
+        <div class="definition">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+            architecto temporibus quas nesciunt, placeat voluptas esse vitae in
+            modi doloribus.
+          </p>
+
+          <button class="up" id="up-button" aria-label="turn clockwise">
+            <img src="/icons/expand_less.svg" alt="turn clockwise" />
+          </button>
+          <button
+            class="down"
+            id="down-button"
+            aria-label="turn counterclockwise"
+          >
+            <img src="/icons/expand_more.svg" alt="turn counterclockwise" />
+          </button>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
