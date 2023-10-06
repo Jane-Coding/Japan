@@ -19,19 +19,30 @@ const words = [emoji, sudoku, origami, sakura];
 accordion.addEventListener("click", function (e) {
   if (!e.target.classList.contains("accordion")) {
     for (let pic of pictures) {
-      pic.classList.contains("show") ? pic.classList.remove("show") : false;
+      pic.classList.contains("js-show")
+        ? pic.classList.remove("js-show")
+        : false;
     }
-    if (!e.target.classList.contains("show")) {
-      e.target.classList.add("show");
-      if (e.target.classList.contains("fuji")) {
-        descriptionText.innerHTML = "Discover picturesque scenery";
-      } else if (e.target.classList.contains("garden")) {
-        descriptionText.innerHTML = "Relax in peaceful gardens";
-      } else if (e.target.classList.contains("street")) {
-        descriptionText.innerHTML = "Walk urban streets";
-      } else if (e.target.classList.contains("tori")) {
-        descriptionText.innerHTML = "Visit shinto shrines";
-      }
+    if (!e.target.classList.contains("js-show")) {
+      e.target.classList.add("js-show");
+    }
+    switch (e.target.dataset.picture) {
+      case "fuji":
+        let phrase1 = "Discover picturesque scenery.";
+        fade(phrase1);
+        break;
+      case "garden":
+        let phrase2 = "Relax in peaceful gardens.";
+        fade(phrase2);
+        break;
+      case "street":
+        let phrase3 = "Walk urban streets.";
+        fade(phrase3);
+        break;
+      case "tori":
+        let phrase4 = "Visit shinto shrines.";
+        fade(phrase4);
+        break;
     }
   }
 });
@@ -64,3 +75,11 @@ downButton.addEventListener("click", function () {
   }
   words[i].classList.toggle("invisible");
 });
+
+function fade(text) {
+  descriptionText.style.animation = "fadeOut 1s";
+  setTimeout(function () {
+    descriptionText.style.animation = "fadeIn 2s";
+    descriptionText.innerHTML = text;
+  }, 500);
+}
