@@ -47,14 +47,13 @@ main {
 }
 
 .container {
-    height: 100vh;
+    height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
 .accordion {
-    height: 70vh;
     display: flex;
     flex-direction: column;
     gap: 1vh;
@@ -76,14 +75,11 @@ main {
 }
 
 .description {
-    /* height: 30vh; */
     text-align: center;
 }
 
 .information {
     position: relative;
-    /* height: 100vh; */
-    /* width: 100vw; */
 }
 
 .information-header {
@@ -172,7 +168,6 @@ main {
 }
 
 .cover {
-    /* position: absolute; */
     top: 0;
     left: 0;
     width: 100vw;
@@ -193,27 +188,19 @@ main {
 }
 
 .definition {
-    margin: 0 1rem;
-    padding-top: .5rem;
-    padding-bottom: 2rem;
+    padding: .5rem;
     display: grid;
     scroll-snap-align: end;
 }
 
 .definition-container {
-    /* height: fit-content; */
-    height: 45vh;
-    padding: 0 .5em;
     grid-row: span 3;
     grid-column: span 2;
     position: relative;
 }
 
 .definition-item {
-    /* position: absolute;
-    width: 100%;
-    height: 100%; */
-    animation: fadeIn 1s;
+    padding: .3em;
 }
 
 .invisible {

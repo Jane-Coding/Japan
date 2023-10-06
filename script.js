@@ -47,6 +47,14 @@ accordion.addEventListener("click", function (e) {
   }
 });
 
+const items = document.querySelectorAll(".definition-item");
+
+let heights = [...items].map((el) => el.offsetHeight);
+let maxHeight = Math.max(...heights);
+
+const fixedHeight = document.getElementById("fixed-height");
+fixedHeight.style = `height: ${maxHeight}px`
+
 let degrees = 0;
 let i = 0;
 
@@ -61,6 +69,7 @@ upButton.addEventListener("click", function () {
     i = 0;
   }
   words[i].classList.toggle("invisible");
+  console.log(words[i].offsetHeight);
 });
 
 downButton.addEventListener("click", function () {
