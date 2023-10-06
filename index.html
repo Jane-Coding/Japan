@@ -16,9 +16,10 @@
     <main>
       <div class="banner">日本</div>
       <p class="introduction">
-        The name for Japan in Japanese is written using the kanji 日本 and is
-        pronounced Nippon or Nihon.The characters 日本 mean "sun origin", which
-        is the source of the popular Western epithet "Land of the Rising Sun".
+        The name for Japan in Japanese is written using the kanji
+        <b>日本</b> and is pronounced Nippon or Nihon.The characters
+        <b>日本</b> mean "sun origin", which is the source of the popular
+        Western epithet "Land of the Rising Sun".
       </p>
       <section class="container">
         <div class="accordion" id="accordion">
@@ -84,46 +85,66 @@
           />
         </div>
         <div class="description">
-          <h2 id="description-header">Discover picturesque scenery</h2>
-          <p id="description-text">
-            Japan's natural beauty can be enjoyed all year round.
-          </p>
+          <h2 id="description-header">In Japan you can...</h2>
+          <p id="description-text">Discover picturesque scenery.</p>
         </div>
       </section>
       <section class="information">
+        <img class="cat" src="/images/neko.png" alt="picture of Maneki neko" />
         <div class="cover">
-          <h2 class="information-header">
+          <h3 class="information-header">
             Most famous japanese words that everybody knows
-          </h2>
+          </h3>
           <p class="information-fineprint">*or at least heard about them</p>
         </div>
-        <img class="cat" src="/images/neko.png" alt="picture of Maneki neko" />
         <div class="wheel" id="rotation">
           <span class="option"
-            ><p>寿司</p>
-            <p>Sushi</p></span
+            ><p class="kanji">折り紙</p>
+            <p>Origami</p></span
           >
           <span class="option"
-            ><p>桜</p>
+            ><p class="kanji">桜</p>
             <p>Sakura</p></span
           >
-          <span class="option" id="center"> </span>
+          <span class="option"> </span>
           <span class="option"
-            ><p>アニメ</p>
-            <p>Anime</p></span
+            ><p class="kanji">数独</p>
+            <p>Sudoku</p></span
           >
           <span class="option"
-            ><p>絵文字</p>
+            ><p class="kanji">絵文字</p>
             <p>Emoji</p></span
           >
         </div>
         <div class="definition">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-            architecto temporibus quas nesciunt, placeat voluptas esse vitae in
-            modi doloribus.
-          </p>
+          <div class="definition-container">
+            <p class="definition-item" id="emoji">
+              The word emoji comes from Japanese <i>e</i> 絵 meaning picture and
+              <i>moji</i>, 文字 meaning character. Emojis developed as a
+              solution to miscommunication problems that arose from the
+              increasing use of emails.
+            </p>
 
+            <p class="definition-item invisible" id="sakura">
+              The cherry blossom is known as <i>sakura</i> 桜 in Japanese and
+              symbolises not only the return of spring but of renewal and hope.
+              The cherry blossom is Japan's unofficial national flower and it
+              appears on the 100 Yen coin.
+            </p>
+
+            <p class="definition-item invisible" id="origami">
+              折る <i>oru</i> - to fold and 紙 <i>kami</i> - paper. When origami
+              was first practiced it was a craft only for the elite due to the
+              high price of the paper. Originally it was used for religious
+              purposes.
+            </p>
+
+            <p class="definition-item invisible" id="sudoku">
+              数 <i>suu</i> - number, 独 <i>doku</i> single. Sudoku is a
+              logic-based number-placement puzzle. It is a registered trademark
+              in Japan, and the puzzle is generally referred to as Number Place.
+            </p>
+          </div>
           <button class="up" id="up-button" aria-label="turn clockwise">
             <img src="/icons/expand_less.svg" alt="turn clockwise" />
           </button>
