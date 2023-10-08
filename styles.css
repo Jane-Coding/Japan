@@ -8,6 +8,7 @@
     --fs-regular: 1rem;
     --fs-112: 1.12rem;
     --fs-125: 1.25rem;
+    --fs-150: 1.5rem;
 }
 
 body {
@@ -98,11 +99,12 @@ main {
 @media (min-width: 1000px) {
     .accordion {
         flex-direction: row;
-        gap: 1vw;     
+        gap: 1vw;
+        justify-content: space-around;
     }
     .picture {
         height: 70vh;
-        width: 10vw;
+        width: 9vw;
         border-radius: 50px;
         transition: width 1s, filter 1s;
     }
@@ -119,6 +121,14 @@ main {
     position: relative;
 }
 
+.header {
+    position: absolute;    
+    top: 10vw;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
 .information-header {
     margin: 0 .2rem;
     text-align: center;
@@ -130,9 +140,28 @@ main {
     margin: 0;
 }
 
+.cover {
+    position: relative;
+    width: 100vw;
+    height: 100vw;
+    clip-path: polygon(0 100vw, 100vw 100vw, 50vw 40vw);
+    z-index: 1;
+}
+
+.cat {    
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 50vw;
+    left: 50vw;
+    transform: translate(-50px, -50px);
+    z-index: 2;
+}
+
 .wheel {
     height: 100vw;
     width: 100vw;
+    position: absolute;
     border-radius: 50%;
     background: radial-gradient(rgb(198, 42, 49) 30%, rgb(90, 0, 0));
     display: grid;
@@ -140,9 +169,7 @@ main {
     grid-template-rows: auto auto auto;
     transform: rotate(0deg);
     transition: transform .5s;
-    position: absolute;
     z-index: -1;
-    top: 0;
 }
 
 .option {
@@ -191,26 +218,6 @@ main {
     text-align: center;
 }
 
-.cover {
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vw;
-    background-color: var(--main-bg-color);
-    /* clip-path: polygon(0 0, 100vw 0, 100vw 100vw, 50vw 40vw, 0 100vw); */
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 40%, 0 100%);
-}
-
-.cat {    
-    height: 100px;
-    width: 100px;
-    position: absolute;
-    top: 50vw;
-    left: 50vw;
-    transform: translate(-50px, -50px);
-    z-index: 2;
-}
-
 .definition {
     padding: .5rem;
     display: grid;
@@ -221,11 +228,14 @@ main {
     grid-row: span 3;
     grid-column: span 2;
     position: relative;
+    display: flex;
+    text-align: center;
 }
 
 .definition-item {
     margin: 0;
     padding: 0 .3em;
+    align-self: center;
 }
 
 .invisible {
@@ -265,9 +275,6 @@ main {
         height: 125px;
         transform: translate(-63px, -63px);
     }
-    .information{
-        /* margin:auto; */
-    }
 
     .wheel {
         width: 80vw;
@@ -282,10 +289,15 @@ main {
 }
 
 @media (min-width: 600px){
-    .information-header,
-    .information-fineprint {
+    .header {
         transform: translateY(2.2em);
     }
+
+    .cover {
+        height: 90vw;
+        clip-path: polygon(0 100vw, 100vw 100vw, 50vw 45vw);
+    }
+
     .up {
         grid-row: 1;
         grid-column: 2;
@@ -293,10 +305,8 @@ main {
     .definition-container {
         grid-row: 2;
         grid-column: span 3;
-        padding: .5em;
-        text-align: center;
     }
-    
+
     .down {
         grid-row: 3;
         grid-column: 2;
@@ -308,19 +318,24 @@ main {
         left: 15vw;
         top: 15vw;
     }
-.cover{
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 45%, 0 90%);
-}
 }
 
-@media (min-width: 1000px){
+@media (min-width: 900px){
     .information {
         display: flex;
+        gap: 0;
     }
+
+    .header {
+        top: 5vw;
+        transform: translateY(-2.2em);
+    }
+
     .cover {
         height: 50vw;
-        width: auto;
-        clip-path: polygon(0 0, 50vw 0, 25vw 25vw, 50vw 50vw, 0 50vw);
+        width: 50vw;
+        top: 0;
+        clip-path: polygon(100% 10%, 50% 50%, 100% 90%);
     }
 
     .cat {
@@ -329,10 +344,10 @@ main {
     }
 
     .wheel {
-        width: 49vw;
-        height: 49vw;
         top: 0;
         left: 0;
+        width: 100%;
+        height: 100%;
         transform: rotate(-90deg);
     }
 
@@ -350,10 +365,27 @@ main {
     }
 
     .definition {
-        height: 50%;
         width: 50%;
-        align-self: center;
+        padding: 0;
+        margin-top: 2em;
+        align-content: space-evenly;
         scroll-snap-align: none;
+    }
+}
+
+@media (min-width: 1100px){
+    body {
+        font-size: var(--fs-150);
+    }
+    .information {
+        justify-content: space-evenly;
+    }
+
+    .cover {
+        height: 40vw;
+        width: 40vw;
+        top: 5vw;
+        clip-path: polygon(100% 10%, 50% 50%, 100% 90%);
     }
 }
 
