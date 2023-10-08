@@ -4,12 +4,17 @@
     --darkred: #8b0000;
     --gold: #ca8e2f;
     --text: #cdcdcd;
+
+    --fs-regular: 1rem;
+    --fs-112: 1.12rem;
+    --fs-125: 1.25rem;
 }
 
 body {
     margin: 0;
     background-color: var(--main-bg-color);
-    color: var(--text);    
+    color: var(--text);
+    font-size: var(--fs-regular);
 }
 
 main {
@@ -21,24 +26,40 @@ main {
 
 .banner {
     margin: auto;
-    /* font-family: 'Zen Antique', serif; */
-    font-family: 'Dela Gothic One', cursive;
-    font-size: 65vw;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
     background: url(/images/shinjuku-sm.webp);
     background-size: cover;
     background-clip: text;
     background-position: center;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    cursor: default;
 }
 
-.banner-bg {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    object-position: center;
+.banner-text {
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    /* font-family: 'Zen Antique', serif; */
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 13em;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+
+}
+
+@media (min-width: 400px){
+    body {
+        font-size: var(--fs-112);
+    }
+    .banner-text {
+        font-size: 15em;
+    }
+}
+
+@media (min-width: 600px){
+    body {
+        font-size: var(--fs-125);
+    }
 }
 
 .introduction {
@@ -63,7 +84,7 @@ main {
 .picture {
     height: 9vh;
     width: 100%;
-    border-radius: 20px;
+    border-radius: 30px;
     filter: grayscale(1);
     transition: height 1s, filter 1s;
     object-fit: cover;
@@ -72,6 +93,22 @@ main {
 .js-show {
     height: 40vh;
     filter: grayscale(0.5);
+}
+
+@media (min-width: 1000px) {
+    .accordion {
+        flex-direction: row;
+        gap: 1vw;     
+    }
+    .picture {
+        height: 70vh;
+        width: 10vw;
+        border-radius: 50px;
+        transition: width 1s, filter 1s;
+    }
+    .js-show {
+        width: 67vw;
+    }
 }
 
 .description {
@@ -107,19 +144,6 @@ main {
     z-index: -1;
     top: 0;
 }
-
-/* @media (min-width: 400px){
-    .inner-box {
-        height: 80vw;
-        width: 80vw;
-        left: 10vw;
-    }
-    .wheel {
-        width: 99%;
-        height: 99%;
-    }
-    
-} */
 
 .option {
     display: inline-block;
@@ -200,7 +224,8 @@ main {
 }
 
 .definition-item {
-    padding: .3em;
+    margin: 0;
+    padding: 0 .3em;
 }
 
 .invisible {
@@ -234,30 +259,103 @@ main {
     grid-row: 3;
 }
 
-/* @media (min-height: 600px){
+@media (min-width: 450px){
+    .cat {
+        width: 125px;
+        height: 125px;
+        transform: translate(-63px, -63px);
+    }
+    .information{
+        /* margin:auto; */
+    }
+
+    .wheel {
+        width: 80vw;
+        height: 80vw;
+        left: 10vw;
+        top: 10vw;
+    }
+
+    .definition {
+        padding: 1.5rem;
+    }
+}
+
+@media (min-width: 600px){
+    .information-header,
+    .information-fineprint {
+        transform: translateY(2.2em);
+    }
     .up {
         grid-row: 1;
         grid-column: 2;
     }
-    .definition p {
+    .definition-container {
         grid-row: 2;
         grid-column: span 3;
+        padding: .5em;
+        text-align: center;
     }
     
     .down {
         grid-row: 3;
         grid-column: 2;
     }
-    .information {
-        height: 90vh;
-    }
-} */
 
-/* @media (min-height: 800px){
-    .information {
-        height: 75vh;
+    .wheel {
+        width: 70vw;
+        height: 70vw;
+        left: 15vw;
+        top: 15vw;
     }
-} */
+.cover{
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 45%, 0 90%);
+}
+}
+
+@media (min-width: 1000px){
+    .information {
+        display: flex;
+    }
+    .cover {
+        height: 50vw;
+        width: auto;
+        clip-path: polygon(0 0, 50vw 0, 25vw 25vw, 50vw 50vw, 0 50vw);
+    }
+
+    .cat {
+        top:25vw;
+        left: 25vw;
+    }
+
+    .wheel {
+        width: 49vw;
+        height: 49vw;
+        top: 0;
+        left: 0;
+        transform: rotate(-90deg);
+    }
+
+    .option:nth-of-type(1) {
+        transform: rotate(-90deg);
+    }
+    .option:nth-of-type(2) {
+        transform: rotate(-180deg);
+    }
+    .option:nth-of-type(4) {
+        transform: rotate(0deg);
+    }
+    .option:nth-of-type(5) {
+        transform: rotate(90deg);
+    }
+
+    .definition {
+        height: 50%;
+        width: 50%;
+        align-self: center;
+        scroll-snap-align: none;
+    }
+}
 
 .down:active,
 .up:active {
