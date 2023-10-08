@@ -321,6 +321,23 @@ main {
 }
 
 @media (min-width: 900px){
+    .banner {
+        background-image: url("/images/shinjuku-1000.webp");
+    }
+
+    .banner-text{
+        margin: 0;
+        font-size: 20em;
+        text-orientation: sideways;
+        writing-mode: horizontal-tb;
+    }
+
+    .introduction{
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .information {
         display: flex;
         gap: 0;
@@ -377,6 +394,15 @@ main {
     body {
         font-size: var(--fs-150);
     }
+
+    .banner {
+        background-image: url("/images/shinjuku-2000.webp");
+    }
+
+    .banner-text{
+        font-size: 21em;
+    }
+
     .information {
         justify-content: space-evenly;
     }
@@ -386,6 +412,12 @@ main {
         width: 40vw;
         top: 5vw;
         clip-path: polygon(100% 10%, 50% 50%, 100% 90%);
+    }
+}
+
+@media (min-width: 1500px){
+    .banner-text{
+        font-size: 25em;
     }
 }
 
