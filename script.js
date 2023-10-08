@@ -28,19 +28,19 @@ accordion.addEventListener("click", function (e) {
     }
     switch (e.target.dataset.picture) {
       case "fuji":
-        let phrase1 = "Discover picturesque scenery.";
+        let phrase1 = "Discover picturesque scenery";
         fade(phrase1);
         break;
       case "garden":
-        let phrase2 = "Relax in peaceful gardens.";
+        let phrase2 = "Relax in peaceful gardens";
         fade(phrase2);
         break;
       case "street":
-        let phrase3 = "Walk urban streets.";
+        let phrase3 = "Walk urban streets";
         fade(phrase3);
         break;
       case "tori":
-        let phrase4 = "Visit shinto shrines.";
+        let phrase4 = "Visit shinto shrines";
         fade(phrase4);
         break;
     }
@@ -55,7 +55,15 @@ let maxHeight = Math.max(...heights);
 const fixedHeight = document.getElementById("fixed-height");
 fixedHeight.style = `height: ${maxHeight}px`
 
-let degrees = 0;
+function checkDegrees(){
+  let width = window.innerWidth
+  if(width >= 900){
+    return -90
+  }
+  else { return 0}
+}
+
+let degrees = checkDegrees()
 let i = 0;
 
 upButton.addEventListener("click", function () {
@@ -69,7 +77,6 @@ upButton.addEventListener("click", function () {
     i = 0;
   }
   words[i].classList.toggle("invisible");
-  console.log(words[i].offsetHeight);
 });
 
 downButton.addEventListener("click", function () {
