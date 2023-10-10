@@ -48,23 +48,47 @@ accordion.addEventListener("click", function (e) {
 });
 
 const items = document.querySelectorAll(".definition-item");
-
-let heights = [...items].map((el) => el.offsetHeight);
-let maxHeight = Math.max(...heights);
-
 const fixedHeight = document.getElementById("fixed-height");
-fixedHeight.style = `height: ${maxHeight}px`
+checkHeight();
+var degrees = checkDegrees();
+let i = 0;
 
-function checkDegrees(){
-  let width = window.innerWidth
-  if(width >= 900){
-    return -90
+window.addEventListener("resize", function () {
+  if (window.innerWidth >= 900) {
+    rotation.style.transform = `rotate(-90deg)`;
+    words
+      .filter((el) => !el.classList.contains("invisible"))[0]
+      .classList.toggle("invisible");
+    words[0].classList.toggle("invisible");
+    degrees = checkDegrees();
+    i = 0;
+  } else if (this.window.innerWidth <= 900) {
+    rotation.style.transform = `rotate(0deg)`;
+    words
+      .filter((el) => !el.classList.contains("invisible"))[0]
+      .classList.toggle("invisible");
+    words[0].classList.toggle("invisible");
+    degrees = checkDegrees();
+    i = 0;
   }
-  else { return 0}
+  checkHeight();
+});
+
+function checkHeight() {
+  let heights = [...items].map((el) => el.offsetHeight);
+  let maxHeight = Math.max(...heights);
+
+  fixedHeight.style = `height: ${maxHeight}px`;
 }
 
-let degrees = checkDegrees()
-let i = 0;
+function checkDegrees() {
+  let width = window.innerWidth;
+  if (width >= 900) {
+    return -90;
+  } else {
+    return 0;
+  }
+}
 
 upButton.addEventListener("click", function () {
   degrees += 90;
